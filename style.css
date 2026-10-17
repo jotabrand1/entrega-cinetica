@@ -1,0 +1,236 @@
+/* ---------- Tokens ---------- */
+:root {
+  --tinta: #1f3a5f;        /* azul-tinta: cor principal */
+  --manteiga: #f3e3a3;     /* amarelo-manteiga: destaque */
+  --cafe: #4a2c1a;         /* marrom do café: texto */
+  --fundo: #fbfaf7;
+  --linha: #d9d4c7;
+
+  --fonte-titulo: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --fonte-texto: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --margem: clamp(1.25rem, 5vw, 4rem);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--cafe);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--tinta);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.01em; }
+
+p { margin: 0 0 1rem; max-width: 60ch; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 3px;
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding: 1.25rem var(--margem);
+  border-bottom: 1px solid var(--linha);
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.topo ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topo nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.topo nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Botão ---------- */
+.botao {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  background: var(--tinta);
+  color: #fff;
+  font: 600 1rem var(--fonte-texto);
+  text-decoration: none;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.botao:hover { background: var(--manteiga); color: var(--tinta); }
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(3rem, 8vw, 7rem) var(--margem);
+}
+
+.hero__sub { font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* Escala de torra: o elemento marcante da página */
+.escala__barra {
+  height: 5.5rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d9a860 0%, #a8662f 45%, #5a311a 75%, #24120a 100%);
+}
+
+.escala__pontos {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0.75rem 0.5rem 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+.escala__legenda {
+  margin: 1.5rem 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--manteiga);
+}
+
+/* ---------- Sobre / Serviços ---------- */
+.sobre {
+  padding: clamp(3rem, 7vw, 6rem) var(--margem);
+  background: var(--manteiga);
+}
+
+.sobre h2,
+.sobre__intro { color: var(--tinta); }
+
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0 0;
+}
+
+.servico {
+  border-top: 3px solid var(--tinta);
+  padding-top: 1rem;
+}
+
+.servico dt {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--tinta);
+  margin-bottom: 0.5rem;
+}
+
+.servico dd { margin: 0; }
+
+/* ---------- Contato ---------- */
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(3rem, 7vw, 6rem) var(--margem);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form label {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  color: var(--cafe);
+  background: #fff;
+  border: 1.5px solid var(--linha);
+  border-radius: 0.5rem;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--tinta);
+  box-shadow: 0 0 0 3px var(--manteiga);
+}
+
+.form textarea { resize: vertical; }
+
+.form .botao {
+  align-self: flex-start;
+  margin-top: 1.25rem;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  padding: 1.5rem var(--margem);
+  border-top: 1px solid var(--linha);
+  font-size: 0.9rem;
+}
+
+.rodape p { margin: 0; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .hero,
+  .contato { grid-template-columns: 1fr; }
+
+  .servicos { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 1rem; }
+  .topo { justify-content: center; }
+  .botao { width: 100%; text-align: center; }
+  .form .botao { align-self: stretch; }
+  .escala__barra { height: 4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .botao { transition: none; }
+}

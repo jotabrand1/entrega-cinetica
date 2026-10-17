@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Torra Miúda | Café especial torrado em pequenos lotes</title>
+  <meta name="description" content="Torrefação fictícia de café especial. Escolha seu ponto de torra, assine e receba em casa.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="#inicio">Torra Miúda</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#sobre">O que fazemos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__texto">
+        <h1>Café torrado na semana em que você vai beber.</h1>
+        <p class="hero__sub">Lotes de no máximo 12 kg, torra feita sob encomenda e entrega em até 3 dias depois de sair do tambor.</p>
+        <a class="botao" href="#contato">Quero provar o primeiro lote</a>
+      </div>
+
+      <div class="escala" role="img" aria-label="Escala de torra: do claro ao escuro">
+        <div class="escala__barra"></div>
+        <ul class="escala__pontos">
+          <li>Clara</li>
+          <li>Média</li>
+          <li>Escura</li>
+        </ul>
+        <p class="escala__legenda">Você escolhe o ponto. A gente torra.</p>
+      </div>
+    </section>
+
+    <!-- SOBRE / SERVIÇOS -->
+    <section class="sobre" id="sobre">
+      <h2>O que fazemos</h2>
+      <p class="sobre__intro">Somos uma torrefação pequena. Compramos direto de sítios que a gente visita e torramos só o que foi pedido.</p>
+
+      <dl class="servicos">
+        <div class="servico">
+          <dt>Grãos avulsos</dt>
+          <dd>Pacotes de 250 g ou 1 kg, em grão ou moído para o seu método: coador, prensa francesa ou espresso.</dd>
+        </div>
+        <div class="servico">
+          <dt>Assinatura mensal</dt>
+          <dd>Um café novo por mês, escolhido por nós. Você pode pausar ou cancelar quando quiser.</dd>
+        </div>
+        <div class="servico">
+          <dt>Oficina de preparo</dt>
+          <dd>Aula de duas horas na torrefação para aprender a moer, medir e extrair melhor em casa.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+      <div class="contato__intro">
+        <h2>Fale com a gente</h2>
+        <p>Conte o que você costuma beber e respondemos com uma sugestão de torra em até um dia útil.</p>
+      </div>
+
+      <form class="form" action="#" method="post">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" required>
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button class="botao" type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Torra Miúda é um site fictício criado para um exercício de HTML e CSS.</p>
+  </footer>
+
+</body>
+</html>
