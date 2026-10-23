@@ -58,6 +58,42 @@ a { color: inherit; }
   border-bottom: 1px solid var(--linha);
 }
 
+.menu-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.65rem;
+  color: var(--tinta);
+  background: transparent;
+  border: 1.5px solid var(--linha);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.menu-toggle__icon { position: relative; margin: auto; }
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+.menu-toggle__icon::before { top: -0.4rem; }
+.menu-toggle__icon::after { top: 0.4rem; }
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon { background: transparent; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::before { top: 0; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::after { top: 0; transform: rotate(-45deg); }
+
 .logo {
   font-family: var(--fonte-titulo);
   font-weight: 800;
@@ -200,6 +236,16 @@ a { color: inherit; }
 
 .form textarea { resize: vertical; }
 
+.form__status {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.form__status--success { color: #183d2b; background: #e5f2e9; }
+.form__status--error { color: #6d211a; background: #f9e8e4; }
+.form__status--info { color: var(--tinta); background: #f3e3a3; }
+
 .form .botao {
   align-self: flex-start;
   margin-top: 1.25rem;
@@ -222,9 +268,17 @@ a { color: inherit; }
   .servicos { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
 }
 
+@media (max-width: 600px) {
+  .topo { justify-content: space-between; gap: 0.75rem 1rem; }
+  .menu-toggle { display: inline-grid; place-items: center; }
+  .topo nav { display: none; flex-basis: 100%; width: 100%; }
+  .topo nav.menu--aberto { display: block; }
+  .topo ul { flex-direction: column; gap: 0; }
+  .topo nav a { display: block; padding: 0.65rem 0; }
+}
+
 @media (max-width: 480px) {
   body { font-size: 1rem; }
-  .topo { justify-content: center; }
   .botao { width: 100%; text-align: center; }
   .form .botao { align-self: stretch; }
   .escala__barra { height: 4rem; }
@@ -232,5 +286,8 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .botao { transition: none; }
+  .botao,
+  .menu-toggle__icon,
+  .menu-toggle__icon::before,
+  .menu-toggle__icon::after { transition: none; }
 }

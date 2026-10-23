@@ -15,7 +15,10 @@
 
   <header class="topo">
     <a class="logo" href="#inicio">Torra Miúda</a>
-    <nav aria-label="Principal">
+    <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__icon" aria-hidden="true"></span>
+    </button>
+    <nav id="menu-principal" aria-label="Principal">
       <ul>
         <li><a href="#sobre">O que fazemos</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -71,7 +74,7 @@
         <p>Conte o que você costuma beber e respondemos com uma sugestão de torra em até um dia útil.</p>
       </div>
 
-      <form class="form" action="#" method="post">
+      <form class="form" id="form-contato" action="#" method="post" data-webhook-url="">
         <label for="nome">Nome</label>
         <input id="nome" name="nome" type="text" autocomplete="name" required>
 
@@ -82,13 +85,15 @@
         <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
         <button class="botao" type="submit">Enviar mensagem</button>
+        <p class="form__status" id="form-status" role="status" aria-live="polite" hidden></p>
       </form>
     </section>
   </main>
 
   <footer class="rodape">
-    <p>Torra Miúda é um site fictício criado para um exercício de HTML e CSS.</p>
+    <p>Torra Miúda é um site fictício criado para um exercício de HTML, CSS e JavaScript.</p>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>

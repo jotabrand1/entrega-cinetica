@@ -1,8 +1,8 @@
 # Torra Miúda
 
-Site institucional de uma torrefação de café fictícia, feito com **HTML e CSS puro** (sem frameworks) como exercício de estrutura de página, responsividade e publicação no GitHub Pages.
+Site institucional de uma torrefação de café fictícia, feito com **HTML, CSS e JavaScript puro** (sem frameworks) como exercício de estrutura de página, responsividade e publicação no GitHub Pages.
 
-🔗 **Site publicado:** https://github.com/jotabrand1/site-vitrine-cinetica
+🔗 **Site publicado:** https://jotabrand1.github.io/entrega-cinetica/
 
 ## Seções
 
@@ -24,6 +24,7 @@ Site institucional de uma torrefação de café fictícia, feito com **HTML e CS
 .
 ├── index.html   # estrutura da página
 ├── style.css    # estilos e responsividade
+├── script.js    # menu mobile e envio do formulário
 └── README.md    # este arquivo
 ```
 
@@ -64,10 +65,15 @@ Não precisa instalar nada.
 3. Selecione a branch `main` e a pasta `/ (root)`, e clique em **Save**.
 4. Aguarde cerca de um minuto e acesse o link gerado.
 
-## Observações
+## Menu e formulário
 
-- O formulário de contato é apenas visual: não envia dados para nenhum servidor.
-- A Torra Miúda é um negócio fictício, criado só para este exercício.
+- Em telas de até 600 px, o botão de menu abre e fecha a navegação. Também é possível fechar com a tecla Esc ou ao escolher um link.
+- O formulário valida nome, e-mail e mensagem no navegador e envia os dados por `fetch` com POST.
+- Para conectar o formulário, preencha o atributo `data-webhook-url` do formulário em `index.html` com a URL do webhook. O atributo está vazio até a automação da próxima etapa estar disponível; enquanto isso, a página informa que o envio ainda não foi conectado.
+- O endpoint precisa aceitar requisições do domínio do GitHub Pages (CORS). Nenhuma URL de teste foi configurada para evitar encaminhar mensagens a um destino de terceiros.
+- Após uma resposta bem-sucedida do endpoint, a página confirma o envio e limpa os campos; em caso de erro, mantém os dados e permite tentar novamente.
+
+A Torra Miúda é um negócio fictício, criado só para este exercício.
 
 ## Autor
 
